@@ -25,15 +25,15 @@ def main():
         limpar_tela()
         print('1- Sinto-me emocionalmente esgotado(a) pelos meus estudos/trabalho.')
         print('0 = Nunca 1 = Raramente 2 = Às vezes 3 = Regularmente\n4 = Frequentemente 5 = Quase sempre 6 = Sempre')
-        resposta_dimensao1 = obter_inteiro_faixa('', 0, 6)
+        resposta_dimensao1 = obter_resposta('> ')
         limpar_tela()
         print('2- Sinto-me esgotado(a) ao final de um dia de estudos/trabalho.')
         print('0 = Nunca 1 = Raramente 2 = Às vezes 3 = Regularmente\n4 = Frequentemente 5 = Quase sempre 6 = Sempre')
-        resposta_dimensao1 += obter_inteiro_faixa('', 0, 6)
+        resposta_dimensao1 += obter_resposta('> ')
         limpar_tela()
         print('3- Acordar de manhã e ter que enfrentar mais um dia me causa cansaço.')
         print('0 = Nunca 1 = Raramente 2 = Às vezes 3 = Regularmente\n4 = Frequentemente 5 = Quase sempre 6 = Sempre')
-        resposta_dimensao1 += obter_inteiro_faixa('', 0, 6)
+        resposta_dimensao1 += obter_resposta('> ')
         limpar_tela()
         
         resultado_dimensao1 = resposta_dimensao1 / 3
@@ -44,15 +44,15 @@ def main():
         
         print('4- Sinto que me tornei mais indiferente com as pessoas ao meu redor.')
         print('0 = Nunca 1 = Raramente 2 = Às vezes 3 = Regularmente\n4 = Frequentemente 5 = Quase sempre 6 = Sempre')
-        resposta_dimensao2 = obter_inteiro_faixa('', 0, 6)
+        resposta_dimensao2 = obter_resposta('> ')
         limpar_tela()
         print('5- Tenho me preocupado menos com o impacto do meu trabalho/estudo nas pessoas.')
         print('0 = Nunca 1 = Raramente 2 = Às vezes 3 = Regularmente\n4 = Frequentemente 5 = Quase sempre 6 = Sempre')
-        resposta_dimensao2 += obter_inteiro_faixa('', 0, 6)
+        resposta_dimensao2 += obter_resposta('> ')
         limpar_tela()
         print('6- Sinto que as pessoas ao meu redor me culpam por alguns dos seus problemas. ')
         print('0 = Nunca 1 = Raramente 2 = Às vezes 3 = Regularmente\n4 = Frequentemente 5 = Quase sempre 6 = Sempre')
-        resposta_dimensao2 += obter_inteiro_faixa('', 0, 6)
+        resposta_dimensao2 += obter_resposta('> ')
         limpar_tela()
         
         resultado_dimensao2 = resposta_dimensao2 / 3
@@ -63,15 +63,15 @@ def main():
         
         print('7- Consigo lidar eficazmente com os problemas que surgem no meu dia a dia.')
         print('0 = Nunca 1 = Raramente 2 = Às vezes 3 = Regularmente\n4 = Frequentemente 5 = Quase sempre 6 = Sempre')
-        resposta_dimensao3 = obter_inteiro_faixa('', 0, 6)
+        resposta_dimensao3 = obter_resposta('> ')
         limpar_tela()
         print('8- Sinto que estou tendo uma influência positiva na vida das pessoas.')
         print('0 = Nunca 1 = Raramente 2 = Às vezes 3 = Regularmente\n4 = Frequentemente 5 = Quase sempre 6 = Sempre')
-        resposta_dimensao3 += obter_inteiro_faixa('', 0, 6)
+        resposta_dimensao3 += obter_resposta('> ')
         limpar_tela()
         print('9- Sinto-me estimulado(a) após trabalhar ou estudar com outras pessoas.')
         print('0 = Nunca 1 = Raramente 2 = Às vezes 3 = Regularmente\n4 = Frequentemente 5 = Quase sempre 6 = Sempre')
-        resposta_dimensao3 += obter_inteiro_faixa('', 0, 6)
+        resposta_dimensao3 += obter_resposta('> ')
         limpar_tela()
         
         resultado_dimensao3 = resposta_dimensao3 / 3
@@ -108,6 +108,10 @@ Média Geral Burnout : {media_geral:.2f}
 ''')
     input()
     limpar_tela()
+    
+def obter_resposta(a):
+    resposta = obter_inteiro_faixa(a, 0, 6)
+    return resposta
         
 def checar_diagnostico(a):
     if 0 <= a <= 2:
